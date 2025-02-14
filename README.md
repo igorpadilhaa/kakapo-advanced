@@ -37,4 +37,3 @@ O desenvolvimento será realizado na plataforma **Arduino IDE**, utilizando a pr
 <p align="center">  
   <img src="https://github.com/VictorH456/kakapo-1-sprint0/blob/main/Imagens/circuito.png" width="480px">
 </p>
----
