@@ -1,6 +1,6 @@
 ---
 
-# Projeto1-VictorC-RyanK-IgorP_UFRR_2024
+# Projeto-VictorC-RyanK-IgorP_UFRR_2024
 
 <br />  
 <p align="center">
