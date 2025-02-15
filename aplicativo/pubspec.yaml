@@ -1,0 +1,37 @@
+name: aplicativo
+description: A new Flutter project.
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+  flutter_local_notifications: ^16.3.3  # Atualize para a versão mais recente
+  shared_preferences: ^2.0.7
+  timezone: ^0.9.0
+
+dev_dependencies:
+  flutter_gen: ^5.8.0
+  flutter_test:
+    sdk: flutter
+  intl_utils: ^2.5.1
+
+flutter:
+  assets:
+    #- lib/l10n/intl_es.arb
+    #- lib/l10n/intl_en.arb
+    #- lib/l10n/intl_pt.arb
+    - assets/images/estatisticas.png
+    - assets/images/preferencias.png
+    - assets/images/home.png
+    - assets/images/espanhol.png
+    - assets/images/ingles.png
+    - assets/images/portugues.png
+    - assets/images/mundo.png
+    - assets/images/mais.png
+    
