@@ -21,5 +21,8 @@
   "idUnavailable": "ID unavailable",
   "temperature": "Temperature",
   "heartRate": "Heart rate",
-  "oxygenation": "Oxygenation"
+  "oxygenation": "Oxygenation",
+  "selectId": "Select Bracelet ID",
+  "fetchingIds": "Fetching available IDs...",
+  "noAvailableIds": "No IDs available at the moment"
 }

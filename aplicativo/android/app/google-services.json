@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "802455110720",
+    "firebase_url": "https://kakapo-86895-default-rtdb.firebaseio.com",
+    "project_id": "kakapo-86895",
+    "storage_bucket": "kakapo-86895.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:802455110720:android:91f820cb9c034f5e8f4ba5",
+        "android_client_info": {
+          "package_name": "com.example.aplicativo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEsOaaLrw9A8a7Ps94LBMckP9lixKpGfE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

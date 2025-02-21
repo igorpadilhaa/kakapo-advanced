@@ -20,6 +20,9 @@
   "nameUnavailable": "Nombre no disponible",
   "idUnavailable": "ID no disponible",
   "temperature": "Temperatura",
-  "heartRate": "Frecuencia cardiaca",
-  "oxygenation": "Oxigenación"
+  "heartRate": "Frecuencia cardíaca",
+  "oxygenation": "Oxigenación",
+  "selectId": "Seleccionar ID de Pulsera",
+  "fetchingIds": "Buscando IDs disponibles...",
+  "noAvailableIds": "No hay IDs disponibles en este momento"
 }

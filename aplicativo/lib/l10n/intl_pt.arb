@@ -21,5 +21,8 @@
   "idUnavailable": "ID não disponível",
   "temperature": "Temperatura",
   "heartRate": "Batimento cardíaco",
-  "oxygenation": "Oxigenação"
+  "oxygenation": "Oxigenação",
+  "selectId": "Selecionar ID da Pulseira",
+  "fetchingIds": "Buscando IDs disponíveis...",
+  "noAvailableIds": "Nenhum ID disponível no momento"
 }

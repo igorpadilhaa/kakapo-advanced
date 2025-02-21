@@ -1,0 +1,2 @@
+/home/ia-saude/Documentos/Kakapo/Hands-on-intermediary/aplicativo/android/app/.cxx/Debug/1q6s1a85/armeabi-v7a/CMakeFiles/edit_cache.dir
+/home/ia-saude/Documentos/Kakapo/Hands-on-intermediary/aplicativo/android/app/.cxx/Debug/1q6s1a85/armeabi-v7a/CMakeFiles/rebuild_cache.dir

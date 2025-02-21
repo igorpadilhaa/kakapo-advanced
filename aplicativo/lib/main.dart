@@ -5,10 +5,13 @@ import 'generated/l10n.dart';
 import 'package:aplicativo/pages/home_page.dart';
 import 'package:aplicativo/pages/estatisticas_page.dart';
 import 'package:aplicativo/pages/preferencias_page.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
   // Garante que o framework esteja completamente inicializado
   WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(); // Inicializa o Firebase
 
   // Carrega as preferências do usuário antes de iniciar o app
   final prefs = await SharedPreferences.getInstance();

@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "/home/ia-saude/snap/flutter/common/flutter/packages/flutter_tools/gradle/src/main/groovy/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/home/ia-saude/Android/Sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/home/ia-saude/Documentos/Kakapo/Hands-on-intermediary/aplicativo/android/app/.cxx/Debug/1q6s1a85/arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/home/ia-saude/Android/Sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/home/ia-saude/Documentos/Kakapo/Hands-on-intermediary/aplicativo/android/app/.cxx/Debug/1q6s1a85/arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {}
+}

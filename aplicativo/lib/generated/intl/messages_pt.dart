@@ -22,32 +22,41 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "_locale": MessageLookupByLibrary.simpleMessage("pt"),
-        "addBracelet":
-            MessageLookupByLibrary.simpleMessage("Adicionar Pulseira"),
-        "cancel": MessageLookupByLibrary.simpleMessage("Cancelar"),
-        "close": MessageLookupByLibrary.simpleMessage("Fechar"),
-        "delete": MessageLookupByLibrary.simpleMessage("Excluir"),
-        "english": MessageLookupByLibrary.simpleMessage("Inglês"),
-        "heartRate": MessageLookupByLibrary.simpleMessage("Batimento cardíaco"),
-        "home": MessageLookupByLibrary.simpleMessage("Início"),
-        "id": MessageLookupByLibrary.simpleMessage("ID"),
-        "idUnavailable":
-            MessageLookupByLibrary.simpleMessage("ID não disponível"),
-        "language": MessageLookupByLibrary.simpleMessage("Idioma"),
-        "name": MessageLookupByLibrary.simpleMessage("Nome"),
-        "nameUnavailable":
-            MessageLookupByLibrary.simpleMessage("Nome não disponível"),
-        "noBracelets":
-            MessageLookupByLibrary.simpleMessage("Nenhuma pulseira disponível"),
-        "notAvailable": MessageLookupByLibrary.simpleMessage("Não disponível"),
-        "oxygenation": MessageLookupByLibrary.simpleMessage("Oxigenação"),
-        "portuguese": MessageLookupByLibrary.simpleMessage("Português"),
-        "preferences": MessageLookupByLibrary.simpleMessage("Preferências"),
-        "save": MessageLookupByLibrary.simpleMessage("Salvar"),
-        "spanish": MessageLookupByLibrary.simpleMessage("Espanhol"),
-        "statistics": MessageLookupByLibrary.simpleMessage("Estatísticas"),
-        "temperature": MessageLookupByLibrary.simpleMessage("Temperatura"),
-        "toggleTheme": MessageLookupByLibrary.simpleMessage("Alterar Tema")
-      };
+    "_locale": MessageLookupByLibrary.simpleMessage("pt"),
+    "addBracelet": MessageLookupByLibrary.simpleMessage("Adicionar Pulseira"),
+    "cancel": MessageLookupByLibrary.simpleMessage("Cancelar"),
+    "close": MessageLookupByLibrary.simpleMessage("Fechar"),
+    "delete": MessageLookupByLibrary.simpleMessage("Excluir"),
+    "english": MessageLookupByLibrary.simpleMessage("Inglês"),
+    "fetchingIds": MessageLookupByLibrary.simpleMessage(
+      "Buscando IDs disponíveis...",
+    ),
+    "heartRate": MessageLookupByLibrary.simpleMessage("Batimento cardíaco"),
+    "home": MessageLookupByLibrary.simpleMessage("Início"),
+    "id": MessageLookupByLibrary.simpleMessage("ID"),
+    "idUnavailable": MessageLookupByLibrary.simpleMessage("ID não disponível"),
+    "language": MessageLookupByLibrary.simpleMessage("Idioma"),
+    "name": MessageLookupByLibrary.simpleMessage("Nome"),
+    "nameUnavailable": MessageLookupByLibrary.simpleMessage(
+      "Nome não disponível",
+    ),
+    "noAvailableIds": MessageLookupByLibrary.simpleMessage(
+      "Nenhum ID disponível no momento",
+    ),
+    "noBracelets": MessageLookupByLibrary.simpleMessage(
+      "Nenhuma pulseira disponível",
+    ),
+    "notAvailable": MessageLookupByLibrary.simpleMessage("Não disponível"),
+    "oxygenation": MessageLookupByLibrary.simpleMessage("Oxigenação"),
+    "portuguese": MessageLookupByLibrary.simpleMessage("Português"),
+    "preferences": MessageLookupByLibrary.simpleMessage("Preferências"),
+    "save": MessageLookupByLibrary.simpleMessage("Salvar"),
+    "selectId": MessageLookupByLibrary.simpleMessage(
+      "Selecionar ID da Pulseira",
+    ),
+    "spanish": MessageLookupByLibrary.simpleMessage("Espanhol"),
+    "statistics": MessageLookupByLibrary.simpleMessage("Estatísticas"),
+    "temperature": MessageLookupByLibrary.simpleMessage("Temperatura"),
+    "toggleTheme": MessageLookupByLibrary.simpleMessage("Alterar Tema"),
+  };
 }
