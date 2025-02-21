@@ -15,20 +15,31 @@ class _EstatisticasPageState extends State<EstatisticasPage> {
   int _selectedIndex = 0;
   final DatabaseReference _database = FirebaseDatabase.instance.ref();
   String _temperatura = "-";
+  String _batimentos = "-";
 
   @override
   void initState() {
     super.initState();
-    _fetchTemperature();
+    _fetchData();
   }
 
-  void _fetchTemperature() {
+  void _fetchData() {
     if (widget.pulseiras.isNotEmpty) {
       String pulseiraId = widget.pulseiras[_selectedIndex]['id'].toString();
+      
+      // Buscar temperatura
       _database.child('pulseira/$pulseiraId/temperatura').onValue.listen((event) {
         final data = event.snapshot.value;
         setState(() {
           _temperatura = data != null ? data.toString() : S.of(context).notAvailable;
+        });
+      });
+
+      // Buscar batimentos
+      _database.child('pulseira/$pulseiraId/batimentos').onValue.listen((event) {
+        final data = event.snapshot.value;
+        setState(() {
+          _batimentos = data != null ? data.toString() : S.of(context).notAvailable;
         });
       });
     }
@@ -56,7 +67,7 @@ class _EstatisticasPageState extends State<EstatisticasPage> {
                           setState(() {
                             _selectedIndex = index;
                           });
-                          _fetchTemperature();
+                          _fetchData();
                         },
                       );
                     },
@@ -81,6 +92,10 @@ class _EstatisticasPageState extends State<EstatisticasPage> {
                           ),
                           Text(
                             '${S.of(context).temperature}: $_temperatura',
+                            style: TextStyle(fontSize: 16),
+                          ),
+                          Text(
+                            '${S.of(context).heartRate}: $_batimentos', // Adicionando batimentos
                             style: TextStyle(fontSize: 16),
                           ),
                         ],
