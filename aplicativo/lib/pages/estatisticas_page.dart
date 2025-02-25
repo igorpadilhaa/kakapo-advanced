@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:aplicativo/generated/l10n.dart';
 
 class EstatisticasPage extends StatefulWidget {
@@ -14,8 +15,10 @@ class EstatisticasPage extends StatefulWidget {
 class _EstatisticasPageState extends State<EstatisticasPage> {
   int _selectedIndex = 0;
   final DatabaseReference _database = FirebaseDatabase.instance.ref();
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   String _temperatura = "-";
   String _batimentos = "-";
+  Map<String, dynamic>? _pacienteInfo; // Armazena os dados do paciente
 
   @override
   void initState() {
@@ -26,20 +29,46 @@ class _EstatisticasPageState extends State<EstatisticasPage> {
   void _fetchData() {
     if (widget.pulseiras.isNotEmpty) {
       String pulseiraId = widget.pulseiras[_selectedIndex]['id'].toString();
-      
-      // Buscar temperatura
-      _database.child('pulseira/$pulseiraId/temperatura').onValue.listen((event) {
+
+      // 🔥 Buscar temperatura do Realtime Database
+      _database
+          .child('pulseira/$pulseiraId/temperatura')
+          .onValue
+          .listen((event) {
         final data = event.snapshot.value;
         setState(() {
-          _temperatura = data != null ? data.toString() : S.of(context).notAvailable;
+          _temperatura =
+              data != null ? data.toString() : S.of(context).notAvailable;
         });
       });
 
-      // Buscar batimentos
-      _database.child('pulseira/$pulseiraId/batimentos').onValue.listen((event) {
+      // 🔥 Buscar batimentos do Realtime Database
+      _database
+          .child('pulseira/$pulseiraId/batimentos')
+          .onValue
+          .listen((event) {
         final data = event.snapshot.value;
         setState(() {
-          _batimentos = data != null ? data.toString() : S.of(context).notAvailable;
+          _batimentos =
+              data != null ? data.toString() : S.of(context).notAvailable;
+        });
+      });
+
+      // 🔥 Buscar os dados do paciente no Firestore
+      _firestore.collection('pacientes').doc(pulseiraId).get().then((doc) {
+        if (doc.exists) {
+          setState(() {
+            _pacienteInfo = doc.data();
+          });
+        } else {
+          setState(() {
+            _pacienteInfo = null;
+          });
+        }
+      }).catchError((error) {
+        print("Erro ao buscar paciente no Firestore: $error");
+        setState(() {
+          _pacienteInfo = null;
         });
       });
     }
@@ -61,8 +90,10 @@ class _EstatisticasPageState extends State<EstatisticasPage> {
                     itemBuilder: (context, index) {
                       final pulseira = widget.pulseiras[index];
                       return ListTile(
-                        title: Text(pulseira['nome'] ?? S.of(context).nameUnavailable),
-                        subtitle: Text('${S.of(context).id}: ${pulseira['id'] ?? S.of(context).idUnavailable}'),
+                        title: Text(
+                            pulseira['nome'] ?? S.of(context).nameUnavailable),
+                        subtitle: Text(
+                            '${S.of(context).id}: ${pulseira['id'] ?? S.of(context).idUnavailable}'),
                         onTap: () {
                           setState(() {
                             _selectedIndex = index;
@@ -83,11 +114,12 @@ class _EstatisticasPageState extends State<EstatisticasPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            '${S.of(context).name}: ${widget.pulseiras[_selectedIndex]['nome']}',
-                            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                            '${S.of(context).name}: ${widget.pulseiras[_selectedIndex]['nome'] ?? S.of(context).nameUnavailable}',
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
                           ),
                           Text(
-                            '${S.of(context).id}: ${widget.pulseiras[_selectedIndex]['id']}',
+                            '${S.of(context).id}: ${widget.pulseiras[_selectedIndex]['id'] ?? S.of(context).idUnavailable}',
                             style: TextStyle(fontSize: 16),
                           ),
                           Text(
@@ -95,9 +127,33 @@ class _EstatisticasPageState extends State<EstatisticasPage> {
                             style: TextStyle(fontSize: 16),
                           ),
                           Text(
-                            '${S.of(context).heartRate}: $_batimentos', // Adicionando batimentos
+                            '${S.of(context).heartRate}: $_batimentos',
                             style: TextStyle(fontSize: 16),
                           ),
+                          SizedBox(height: 10),
+                          _pacienteInfo != null
+                              ? Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      '📋 ${S.of(context).patientData}',
+                                      style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    Text(
+                                        '👤 ${S.of(context).name}: ${_pacienteInfo!['nome'] ?? S.of(context).notAvailable}'),
+                                    Text(
+                                        '📅 ${S.of(context).birthDate}: ${_pacienteInfo!['data_nascimento'] ?? S.of(context).notAvailable}'),
+                                    Text(
+                                        '📞 ${S.of(context).phone}: ${_pacienteInfo!['telefone'] ?? S.of(context).notAvailable}'),
+                                    Text(
+                                        '📍 ${S.of(context).address}: ${_pacienteInfo!['endereco'] ?? S.of(context).notAvailable}'),
+                                    Text(
+                                        '⚠️ ${S.of(context).emergency}: ${_pacienteInfo!['emergencia'] == true ? S.of(context).yes : S.of(context).no}'),
+                                  ],
+                                )
+                              : Text('❌ ${S.of(context).patientNotFound}'),
                         ],
                       ),
                     ),

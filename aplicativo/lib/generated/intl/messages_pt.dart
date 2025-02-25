@@ -24,22 +24,26 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "_locale": MessageLookupByLibrary.simpleMessage("pt"),
     "addBracelet": MessageLookupByLibrary.simpleMessage("Adicionar Pulseira"),
+    "address": MessageLookupByLibrary.simpleMessage("Endereço"),
+    "birthDate": MessageLookupByLibrary.simpleMessage("Data de Nascimento"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancelar"),
     "close": MessageLookupByLibrary.simpleMessage("Fechar"),
     "delete": MessageLookupByLibrary.simpleMessage("Excluir"),
+    "emergency": MessageLookupByLibrary.simpleMessage("Emergência"),
     "english": MessageLookupByLibrary.simpleMessage("Inglês"),
     "fetchingIds": MessageLookupByLibrary.simpleMessage(
       "Buscando IDs disponíveis...",
     ),
-    "heartRate": MessageLookupByLibrary.simpleMessage("Batimento cardíaco"),
+    "heartRate": MessageLookupByLibrary.simpleMessage("Batimentos cardíacos"),
     "home": MessageLookupByLibrary.simpleMessage("Início"),
     "id": MessageLookupByLibrary.simpleMessage("ID"),
-    "idUnavailable": MessageLookupByLibrary.simpleMessage("ID não disponível"),
+    "idUnavailable": MessageLookupByLibrary.simpleMessage("ID indisponível"),
     "language": MessageLookupByLibrary.simpleMessage("Idioma"),
     "name": MessageLookupByLibrary.simpleMessage("Nome"),
     "nameUnavailable": MessageLookupByLibrary.simpleMessage(
-      "Nome não disponível",
+      "Nome indisponível",
     ),
+    "no": MessageLookupByLibrary.simpleMessage("Não"),
     "noAvailableIds": MessageLookupByLibrary.simpleMessage(
       "Nenhum ID disponível no momento",
     ),
@@ -48,6 +52,11 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "notAvailable": MessageLookupByLibrary.simpleMessage("Não disponível"),
     "oxygenation": MessageLookupByLibrary.simpleMessage("Oxigenação"),
+    "patientData": MessageLookupByLibrary.simpleMessage("Dados do Paciente"),
+    "patientNotFound": MessageLookupByLibrary.simpleMessage(
+      "Paciente não encontrado",
+    ),
+    "phone": MessageLookupByLibrary.simpleMessage("Telefone"),
     "portuguese": MessageLookupByLibrary.simpleMessage("Português"),
     "preferences": MessageLookupByLibrary.simpleMessage("Preferências"),
     "save": MessageLookupByLibrary.simpleMessage("Salvar"),
@@ -57,6 +66,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "spanish": MessageLookupByLibrary.simpleMessage("Espanhol"),
     "statistics": MessageLookupByLibrary.simpleMessage("Estatísticas"),
     "temperature": MessageLookupByLibrary.simpleMessage("Temperatura"),
-    "toggleTheme": MessageLookupByLibrary.simpleMessage("Alterar Tema"),
+    "toggleTheme": MessageLookupByLibrary.simpleMessage("Alternar Tema"),
+    "yes": MessageLookupByLibrary.simpleMessage("Sim"),
   };
 }

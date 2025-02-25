@@ -24,9 +24,12 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "_locale": MessageLookupByLibrary.simpleMessage("en"),
     "addBracelet": MessageLookupByLibrary.simpleMessage("Add Bracelet"),
+    "address": MessageLookupByLibrary.simpleMessage("Address"),
+    "birthDate": MessageLookupByLibrary.simpleMessage("Date of Birth"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "close": MessageLookupByLibrary.simpleMessage("Close"),
     "delete": MessageLookupByLibrary.simpleMessage("Delete"),
+    "emergency": MessageLookupByLibrary.simpleMessage("Emergency"),
     "english": MessageLookupByLibrary.simpleMessage("English"),
     "fetchingIds": MessageLookupByLibrary.simpleMessage(
       "Fetching available IDs...",
@@ -38,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "language": MessageLookupByLibrary.simpleMessage("Language"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "nameUnavailable": MessageLookupByLibrary.simpleMessage("Name unavailable"),
+    "no": MessageLookupByLibrary.simpleMessage("No"),
     "noAvailableIds": MessageLookupByLibrary.simpleMessage(
       "No IDs available at the moment",
     ),
@@ -46,6 +50,11 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "notAvailable": MessageLookupByLibrary.simpleMessage("Not available"),
     "oxygenation": MessageLookupByLibrary.simpleMessage("Oxygenation"),
+    "patientData": MessageLookupByLibrary.simpleMessage("Patient Data"),
+    "patientNotFound": MessageLookupByLibrary.simpleMessage(
+      "Patient not found",
+    ),
+    "phone": MessageLookupByLibrary.simpleMessage("Phone"),
     "portuguese": MessageLookupByLibrary.simpleMessage("Portuguese"),
     "preferences": MessageLookupByLibrary.simpleMessage("Preferences"),
     "save": MessageLookupByLibrary.simpleMessage("Save"),
@@ -54,5 +63,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "statistics": MessageLookupByLibrary.simpleMessage("Statistics"),
     "temperature": MessageLookupByLibrary.simpleMessage("Temperature"),
     "toggleTheme": MessageLookupByLibrary.simpleMessage("Toggle Theme"),
+    "yes": MessageLookupByLibrary.simpleMessage("Yes"),
   };
 }

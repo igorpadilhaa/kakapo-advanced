@@ -6,14 +6,18 @@ class HomePage extends StatefulWidget {
   final Function(int) onDeletarPulseira;
   final List<Map<String, dynamic>> pulseiras;
 
-  const HomePage({Key? key, required this.onAddPulseira, required this.onDeletarPulseira, required this.pulseiras}) : super(key: key);
+  const HomePage(
+      {Key? key,
+      required this.onAddPulseira,
+      required this.onDeletarPulseira,
+      required this.pulseiras})
+      : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-
   // Função para adicionar uma nova pulseira
   void _adicionarPulseira() {
     final nomeController = TextEditingController();
@@ -33,7 +37,7 @@ class _HomePageState extends State<HomePage> {
             TextField(
               controller: idController,
               decoration: InputDecoration(labelText: S.of(context).id),
-              keyboardType: TextInputType.number,
+              keyboardType: TextInputType.text, // Aceita texto e números
             ),
           ],
         ),
@@ -47,10 +51,14 @@ class _HomePageState extends State<HomePage> {
           TextButton(
             onPressed: () {
               final nome = nomeController.text;
-              final id = int.tryParse(idController.text);
-              if (nome.isNotEmpty && id != null) {
-                final newPulseira = {'id': id, 'nome': nome};
-                widget.onAddPulseira(newPulseira); // Passa a pulseira para o MyApp
+              final id = idController.text; // Agora o ID é uma string
+              if (nome.isNotEmpty && id.isNotEmpty) {
+                final newPulseira = {
+                  'id': id,
+                  'nome': nome
+                }; // Usando string para ID
+                widget.onAddPulseira(
+                    newPulseira); // Passa a pulseira para o MyApp
                 Navigator.of(context).pop(); // Fecha o dialog
               }
             },
@@ -74,14 +82,18 @@ class _HomePageState extends State<HomePage> {
               itemBuilder: (context, index) {
                 final pulseira = widget.pulseiras[index];
                 return ListTile(
-                  title: Text(pulseira['nome'] ?? S.of(context).nameUnavailable),
-                  subtitle: Text('${S.of(context).id}: ${pulseira['id'] ?? S.of(context).idUnavailable}'),
+                  title:
+                      Text(pulseira['nome'] ?? S.of(context).nameUnavailable),
+                  subtitle: Text(
+                      '${S.of(context).id}: ${pulseira['id'] ?? S.of(context).idUnavailable}'),
                   onTap: () {
                     showDialog(
                       context: context,
                       builder: (context) => AlertDialog(
-                        title: Text(pulseira['nome'] ?? S.of(context).nameUnavailable),
-                        content: Text('${S.of(context).id}: ${pulseira['id'] ?? S.of(context).idUnavailable}'),
+                        title: Text(
+                            pulseira['nome'] ?? S.of(context).nameUnavailable),
+                        content: Text(
+                            '${S.of(context).id}: ${pulseira['id'] ?? S.of(context).idUnavailable}'),
                         actions: [
                           TextButton(
                             onPressed: () {

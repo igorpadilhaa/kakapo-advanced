@@ -229,6 +229,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Patient Data`
+  String get patientData {
+    return Intl.message(
+      'Patient Data',
+      name: 'patientData',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Date of Birth`
+  String get birthDate {
+    return Intl.message('Date of Birth', name: 'birthDate', desc: '', args: []);
+  }
+
+  /// `Phone`
+  String get phone {
+    return Intl.message('Phone', name: 'phone', desc: '', args: []);
+  }
+
+  /// `Address`
+  String get address {
+    return Intl.message('Address', name: 'address', desc: '', args: []);
+  }
+
+  /// `Emergency`
+  String get emergency {
+    return Intl.message('Emergency', name: 'emergency', desc: '', args: []);
+  }
+
+  /// `Yes`
+  String get yes {
+    return Intl.message('Yes', name: 'yes', desc: '', args: []);
+  }
+
+  /// `No`
+  String get no {
+    return Intl.message('No', name: 'no', desc: '', args: []);
+  }
+
+  /// `Patient not found`
+  String get patientNotFound {
+    return Intl.message(
+      'Patient not found',
+      name: 'patientNotFound',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

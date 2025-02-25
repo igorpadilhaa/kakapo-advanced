@@ -1,7 +1,7 @@
 {
   "_locale": "es",
   "home": "Inicio",
-  "addBracelet": "Añadir Pulsera",
+  "addBracelet": "Agregar Pulsera",
   "save": "Guardar",
   "cancel": "Cancelar",
   "noBracelets": "No hay pulseras disponibles",
@@ -22,7 +22,15 @@
   "temperature": "Temperatura",
   "heartRate": "Frecuencia cardíaca",
   "oxygenation": "Oxigenación",
-  "selectId": "Seleccionar ID de Pulsera",
-  "fetchingIds": "Buscando IDs disponibles...",
-  "noAvailableIds": "No hay IDs disponibles en este momento"
+  "selectId": "Seleccionar ID de la Pulsera",
+  "fetchingIds": "Obteniendo IDs disponibles...",
+  "noAvailableIds": "No hay IDs disponibles en este momento",
+  "patientData": "Datos del Paciente",
+  "birthDate": "Fecha de Nacimiento",
+  "phone": "Teléfono",
+  "address": "Dirección",
+  "emergency": "Emergencia",
+  "yes": "Sí",
+  "no": "No",
+  "patientNotFound": "Paciente no encontrado"
 }

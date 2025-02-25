@@ -23,13 +23,16 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "_locale": MessageLookupByLibrary.simpleMessage("es"),
-    "addBracelet": MessageLookupByLibrary.simpleMessage("Añadir Pulsera"),
+    "addBracelet": MessageLookupByLibrary.simpleMessage("Agregar Pulsera"),
+    "address": MessageLookupByLibrary.simpleMessage("Dirección"),
+    "birthDate": MessageLookupByLibrary.simpleMessage("Fecha de Nacimiento"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancelar"),
     "close": MessageLookupByLibrary.simpleMessage("Cerrar"),
     "delete": MessageLookupByLibrary.simpleMessage("Eliminar"),
+    "emergency": MessageLookupByLibrary.simpleMessage("Emergencia"),
     "english": MessageLookupByLibrary.simpleMessage("Inglés"),
     "fetchingIds": MessageLookupByLibrary.simpleMessage(
-      "Buscando IDs disponibles...",
+      "Obteniendo IDs disponibles...",
     ),
     "heartRate": MessageLookupByLibrary.simpleMessage("Frecuencia cardíaca"),
     "home": MessageLookupByLibrary.simpleMessage("Inicio"),
@@ -40,6 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "nameUnavailable": MessageLookupByLibrary.simpleMessage(
       "Nombre no disponible",
     ),
+    "no": MessageLookupByLibrary.simpleMessage("No"),
     "noAvailableIds": MessageLookupByLibrary.simpleMessage(
       "No hay IDs disponibles en este momento",
     ),
@@ -48,15 +52,21 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "notAvailable": MessageLookupByLibrary.simpleMessage("No disponible"),
     "oxygenation": MessageLookupByLibrary.simpleMessage("Oxigenación"),
+    "patientData": MessageLookupByLibrary.simpleMessage("Datos del Paciente"),
+    "patientNotFound": MessageLookupByLibrary.simpleMessage(
+      "Paciente no encontrado",
+    ),
+    "phone": MessageLookupByLibrary.simpleMessage("Teléfono"),
     "portuguese": MessageLookupByLibrary.simpleMessage("Portugués"),
     "preferences": MessageLookupByLibrary.simpleMessage("Preferencias"),
     "save": MessageLookupByLibrary.simpleMessage("Guardar"),
     "selectId": MessageLookupByLibrary.simpleMessage(
-      "Seleccionar ID de Pulsera",
+      "Seleccionar ID de la Pulsera",
     ),
     "spanish": MessageLookupByLibrary.simpleMessage("Español"),
     "statistics": MessageLookupByLibrary.simpleMessage("Estadísticas"),
     "temperature": MessageLookupByLibrary.simpleMessage("Temperatura"),
     "toggleTheme": MessageLookupByLibrary.simpleMessage("Cambiar Tema"),
+    "yes": MessageLookupByLibrary.simpleMessage("Sí"),
   };
 }

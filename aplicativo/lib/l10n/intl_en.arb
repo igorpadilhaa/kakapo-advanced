@@ -24,5 +24,13 @@
   "oxygenation": "Oxygenation",
   "selectId": "Select Bracelet ID",
   "fetchingIds": "Fetching available IDs...",
-  "noAvailableIds": "No IDs available at the moment"
+  "noAvailableIds": "No IDs available at the moment",
+  "patientData": "Patient Data",
+  "birthDate": "Date of Birth",
+  "phone": "Phone",
+  "address": "Address",
+  "emergency": "Emergency",
+  "yes": "Yes",
+  "no": "No",
+  "patientNotFound": "Patient not found"
 }
