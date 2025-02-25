@@ -1,0 +1,2 @@
+/home/torugo/Downloads/Hands-on-intermediary/aplicativo/android/app/.cxx/RelWithDebInfo/53z5c3j2/x86_64/CMakeFiles/edit_cache.dir
+/home/torugo/Downloads/Hands-on-intermediary/aplicativo/android/app/.cxx/RelWithDebInfo/53z5c3j2/x86_64/CMakeFiles/rebuild_cache.dir
