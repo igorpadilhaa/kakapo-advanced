@@ -1,19 +1,4 @@
 ---
-
-# Projeto-VictorC-RyanK-IgorP_UFRR_2024
-
-<br />  
-<p align="center">
-  <a href="">
-    <img src="https://user-images.githubusercontent.com/49700354/114078715-a61b2f00-987f-11eb-8eef-6fd7cfc17d33.png" alt="" width="80" height="80">
-    <img src="https://github.com/VictorH456/MIC014Aula2-VictorC-RyanK-IgorP_UFRR_2024/blob/main/imagens/maloca.png" alt="" width="80" height="80">
-    <img src="https://github.com/VictorH456/MIC014Aula2-VictorC-RyanK-IgorP_UFRR_2024/blob/main/imagens/dcc.png" alt="" width="80" height="80">
-  </a>
-  <h1 align="center">Projeto Pulseira Inteligente</h1>
-  <p align="center">
-    <img src="https://github.com/VictorH456/kakapo-2-sprint0/blob/main/Imagens/logo2.jpeg">
-  </p>
-
 # Projeto-VictorC-RyanK-IgorP_UFRR_2024
 
 <br />  
@@ -56,7 +41,7 @@ O desenvolvimento será realizado na plataforma **Arduino IDE**, utilizando a pr
 - O leitor terá um LCD ou OLED e um leitor RFID. Ele será capaz de ler a tag de identificação da pulseira e consultar os dados do paciente no Firestore, mostrando isso no display.
 
 ## 4. Tutorial de Montagem:
-- **NTC de 5k (Sensor de Temperatura)**: Conecte o pino ligado ao resistor do NTC ao pino **23** do ESP32 Pico. O VCC vai ao **23**, com um resistor em paralelo, e o GND ao **GND**.
+- **NTC de 5k (Sensor de Temperatura)**: Conecte o pino ligado ao resistor do NTC ao pino **23** do ESP32 Pico. O VCC vai ao **23**, com um resistor de **5kΩ** em paralelo, e o GND ao **GND**.
 - **Leitor RFID**: Conecte o leitor RFID ao ESP32 Pico conforme a documentação do fabricante.
 - **Alimentação**: A bateria será ligada ao **TP4056 (módulo de carregamento)**, que será conectado a um **switch** e depois ao **5V (VIN)**.
 - **Botão**: Conecte um botão com um lado no **GND** e o outro na **porta 2** do ESP32 Pico.
