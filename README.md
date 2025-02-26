@@ -36,13 +36,12 @@ O desenvolvimento será realizado na plataforma **Arduino IDE**, utilizando a pr
 
 ## 3. Funcionamento:
 - A pulseira tem um ID gravado na sua Tag único e envia os dados para um documento com o mesmo nome do ID no Realtime Database.
-- A pulseira também possui um **cartão RFID** para facilitar a identificação.
+- A pulseira também possui uma **tag RFID** para facilitar a identificação.
 - O aplicativo vai registrar os pacientes conectados a uma pulseira. Isso será feito criando um documento no Firestore com os dados do paciente, o ID do documento será o ID da pulseira que o paciente usa.
 - O leitor terá um LCD ou OLED e um leitor RFID. Ele será capaz de ler a tag de identificação da pulseira e consultar os dados do paciente no Firestore, mostrando isso no display.
 
 ## 4. Tutorial de Montagem:
 - **NTC de 5k (Sensor de Temperatura)**: Conecte o pino ligado ao resistor do NTC ao pino **23** do ESP32 Pico. O VCC vai ao **23**, com um resistor de **5kΩ** em paralelo, e o GND ao **GND**.
-- **Leitor RFID**: Conecte o leitor RFID ao ESP32 Pico conforme a documentação do fabricante.
 - **Alimentação**: A bateria será ligada ao **TP4056 (módulo de carregamento)**, que será conectado a um **switch** e depois ao **5V (VIN)**.
 - **Botão**: Conecte um botão com um lado no **GND** e o outro na **porta 2** do ESP32 Pico.
 - **LED**: Conecte um LED com um resistor de **330Ω** ao **GND**, e o outro lado na **porta 4** do ESP32 Pico.
@@ -50,7 +49,7 @@ O desenvolvimento será realizado na plataforma **Arduino IDE**, utilizando a pr
 ## 5. Mudanças Implementadas:
 - O aplicativo agora cadastra os dados do paciente junto da pulseira.
 - Implementação de um novo dispositivo de leitura.
-- A pulseira agora possui uma **tag RFID e um cartão RFID**.
+- A pulseira agora possui uma **tag RFID**.
 - Integração entre os dados do Realtime Database e Firestore.
 - Substituição do **Arduino Mega** pelo **ESP32 Pico**.
 - Removido o sensor de batimento cardíaco MAX30100 devido a problemas técnicos.
