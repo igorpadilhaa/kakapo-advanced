@@ -1,4 +1,7 @@
+Perfeito! Aqui está a versão atualizada do README com essas correções: remoção da parte do aplicativo e adição de que a IA **já identifica variações de icterícia e cianose** com base nas mudanças de cor da pele.
+
 ---
+
 # Projeto-VictorC-RyanK-IgorP_UFRR_2024
 
 <br />  
@@ -13,43 +16,56 @@
     <img src="https://github.com/VictorH456/kakapo-2-sprint0/blob/main/Imagens/logo2.jpeg">
   </p>
 
-## 1. Pulseira Inteligente para Monitoramento de Temperatura
+## 1. Pulseira Inteligente para Monitoramento de Temperatura e Cor da Pele
 
-O projeto a ser desenvolvido consiste na criação de uma **pulseira inteligente** que realizará o monitoramento da temperatura corporal utilizando o microcontrolador **ESP32 Pico**. O sistema será composto por um **NTC de 5k** para medição de temperatura.
-
-O NTC de 5k será responsável por monitorar a variação de temperatura. A pulseira inteligente irá exibir essas informações por meio de uma interface simples no dispositivo, podendo ser integrada a outras plataformas para monitoramento em tempo real.
-
-O desenvolvimento será realizado na plataforma **Arduino IDE**, utilizando a programação do **ESP32 Pico** para controlar a leitura dos sensores e a exibição das informações.
+O projeto consiste no desenvolvimento de uma **pulseira inteligente** para monitoramento de **temperatura corporal** e **variação na coloração da pele**, com foco na **detecção de icterícia e cianose**, utilizando o microcontrolador **ESP32 Pico**.
 
 ### 1.1 Objetivos:
-- Criar uma pulseira inteligente para monitoramento de temperatura.
-- Integrar o ESP32 Pico com o NTC de 5k para coleta de dados de saúde.
-- Desenvolver a programação para mostrar os dados de temperatura em tempo real.
-- Explorar o uso do ESP32 Pico em dispositivos vestíveis para saúde.
-- Implementar um sistema de identificação rápida via RFID.
-- Criar um aplicativo para monitoramento e gerenciamento dos dados dos pacientes.
+- Criar uma pulseira vestível e funcional para uso em ambientes de saúde pública.
+- Monitorar a temperatura corporal utilizando sensor **NTC de 5k**.
+- Analisar a coloração da pele com o sensor **TCS3200**.
+- Utilizar inteligência artificial para identificar variações de cor associadas a **icterícia** e **cianose**.
+- Estimar o **grau de variação** da coloração da pele: `Estável`, `Leve`, `Mediana` ou `Alta`.
+- Permitir identificação rápida do paciente via **tag RFID**.
 
 ## 2. Fluxo de Uso:
-- Ao chegar na UBS, o paciente recebe uma pulseira com seus dados gravados.
-- Os agentes da UBS conseguem monitorar o estado do paciente e visualizar suas informações de identificação no aplicativo.
-- O paciente pode ser identificado através da pulseira, usando um leitor especial. O leitor tem uma tela que mostra os dados da pulseira.
+- O paciente recebe uma pulseira com sua tag RFID.
+- A pulseira coleta periodicamente a **temperatura corporal** e a **cor da pele (RGB)**.
+- Os dados são enviados para o banco de dados em nuvem.
+- A **IA processa os dados** e identifica se há variação significativa na cor da pele.
+- Se detectada, a IA classifica:
+  - **Se é icterícia ou cianose**.
+  - **Grau da variação** da condição.
 
 ## 3. Funcionamento:
-- A pulseira tem um ID gravado na sua Tag único e envia os dados para um documento com o mesmo nome do ID no Realtime Database.
-- A pulseira também possui uma **tag RFID** para facilitar a identificação.
-- O aplicativo vai registrar os pacientes conectados a uma pulseira. Isso será feito criando um documento no Firestore com os dados do paciente, o ID do documento será o ID da pulseira que o paciente usa.
-- O leitor terá um LCD ou OLED e um leitor RFID. Ele será capaz de ler a tag de identificação da pulseira e consultar os dados do paciente no Firestore, mostrando isso no display.
+- A pulseira tem um ID único salvo em sua tag RFID.
+- Os dados coletados (temperatura e cor da pele) são enviados via Wi-Fi para o **Realtime Database**.
+- O sensor **TCS3200** coleta as cores RGB da pele.
+- Uma **rede neural** compara os valores anteriores e atuais, enquanto uma **floresta randômica (Random Forest)** classifica o **grau da alteração**.
+- O sistema já é capaz de identificar casos de:
+  - **Icterícia** (coloração amarelada)
+  - **Cianose** (coloração azulada)
+- A pulseira pode ser lida com um dispositivo com leitor RFID e display, que consulta os dados do paciente diretamente no banco de dados.
 
 ## 4. Tutorial de Montagem:
-- **NTC de 5k (Sensor de Temperatura)**: Conecte o pino ligado ao resistor do NTC ao pino **23** do ESP32 Pico. O VCC vai ao **23**, com um resistor de **5kΩ** em paralelo, e o GND ao **GND**.
-- **Alimentação**: A bateria será ligada ao **TP4056 (módulo de carregamento)**, que será conectado a um **switch** e depois ao **5V (VIN)**.
-- **Botão**: Conecte um botão com um lado no **GND** e o outro na **porta 2** do ESP32 Pico.
-- **LED**: Conecte um LED com um resistor de **330Ω** ao **GND**, e o outro lado na **porta 4** do ESP32 Pico.
+- **NTC de 5k (Sensor de Temperatura)**: Conectar ao pino **23** do ESP32 Pico. Utilizar resistor de **5kΩ** em paralelo.
+- **Sensor TCS3200 (Sensor de Cor)**: Conectar os pinos S0–S3 e OUT aos pinos digitais do ESP32 Pico.
+- **RFID**: Utilizar um leitor compatível com SPI, conectando os pinos ao ESP32 Pico.
+- **Alimentação**: Bateria ligada ao **TP4056**, passando por um **switch**, conectando ao **VIN (5V)** do ESP32.
+- **Botão**: Um lado no **GND**, outro na **porta 2** do ESP32.
+- **LED Indicador**: Com resistor de **330Ω**, conectado à **porta 4** do ESP32.
 
 ## 5. Mudanças Implementadas:
-- O aplicativo agora cadastra os dados do paciente junto da pulseira.
-- Implementação de um novo dispositivo de leitura.
-- A pulseira agora possui uma **tag RFID**.
-- Integração entre os dados do Realtime Database e Firestore.
-- Substituição do **Arduino Mega** pelo **ESP32 Pico**.
-- Removido o sensor de batimento cardíaco MAX30100 devido a problemas técnicos.
+- Substituição do Arduino Mega pelo **ESP32 Pico**.
+- **Remoção do aplicativo de monitoramento**.
+- **Remoção do sensor de batimentos MAX30100**.
+- **Adição do sensor TCS3200** para análise da coloração da pele.
+- **Implementação da IA** (rede neural + floresta randômica).
+- Sistema já é capaz de **detectar e classificar** casos de **icterícia e cianose** com base na variação da cor da pele.
+
+## 6. Possíveis Atualizações Futuras:
+- Adição do sensor **MAX30120** para retomada do monitoramento cardíaco.
+- Expansão do modelo de IA para detecção de **doenças dermatológicas mais complexas**, como **câncer de pele**.
+- Melhorias no consumo de energia e integração de baterias recarregáveis de longa duração.
+
+---
