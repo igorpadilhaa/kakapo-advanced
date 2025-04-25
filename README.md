@@ -1,5 +1,3 @@
-Perfeito! Aqui está a versão atualizada do README com essas correções: remoção da parte do aplicativo e adição de que a IA **já identifica variações de icterícia e cianose** com base nas mudanças de cor da pele.
-
 ---
 
 # Projeto-VictorC-RyanK-IgorP_UFRR_2024
